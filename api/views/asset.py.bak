@@ -1,0 +1,116 @@
+from rest_framework import viewsets
+from rest_framework import mixins
+from rest_framework import generics
+from rest_framework.decorators import detail_route, list_route
+from rest_framework.response import Response
+from repository.models import *
+from ..serializers.asset import *
+
+
+class AssetViewSet(viewsets.ModelViewSet):
+    queryset = Asset.objects.all()
+    serializer_class = AssetSerializer
+    lookup_field = 'manufactory'
+
+    # @detail_route(methods = ['post'])
+    # def set_manufactory(self, request, pk=None):
+    #     asset = self.get_object()
+    #     serializer = ManufactorySeirializer(data=request.data)
+    #     if serializer.is_valid():
+    #         asset.manufactory = serializer.data['manufacotry']
+    #         asset.save()
+    #         return Response({'status': 'manufactory set'})
+    #     else:
+    #         return Response(serializer.errors,
+    #                         status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class ServerViewSet(viewsets.ModelViewSet):
+    queryset = Server.objects.all()
+    serializer_class = ServerSerializer
+
+
+class DiskViewSet(viewsets.ModelViewSet):
+    queryset = Disk.objects.all()
+    serializer_class = DiskSerializer
+
+
+
+class RaidAdaptorViewSet(viewsets.ModelViewSet):
+    queryset = RaidAdaptor.objects.all()
+    serializer_class = RaidAdaptorSerializer
+
+
+class NetworkDeviceSet(viewsets.ModelViewSet):
+    queryset = NetworkDevice.objects.all()
+    serializer_class = NetworkDeviceSerializer
+
+
+class NICViewSet(viewsets.ModelViewSet):
+    queryset = Disk.objects.all()
+    serializer_class = NICSerializer
+
+
+class MemoryViewSet(viewsets.ModelViewSet):
+    queryset = Memory.objects.all()
+    serializer_class = MemorySerializer
+
+
+class IDCViewSet(viewsets.ModelViewSet):
+    queryset = IDC.objects.all()
+    serializer_class = MemorySerializer
+
+
+class BusinessUnitViewSet(viewsets.ModelViewSet):
+    queryset = BusinessUnit.objects.all()
+    serializer_class = MemorySerializer
+
+
+class OperatorViewSet(viewsets.ModelViewSet):
+    queryset = Operator.objects.all()
+    serializer_class = MemorySerializer
+
+
+class TagViewSet(viewsets.ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+
+class ManufactoryViewSet(viewsets.ModelViewSet):
+    queryset = Manufactory.objects.all()
+    serializer_class = ManufactorySerializer
+    lookup_field = 'manufactory'
+    lookup_url_kwarg = 'manufactory'
+
+
+# class ManufactoryDetailView(mixins.CreateModelMixin,
+#                             mixins.RetrieveModelMixin,
+#                             mixins.DestroyModelMixin,
+#                             generics.GenericAPIView)
+#
+#     queryset = Manufactory.objects.all()
+#     serializer_class = ManufactorySerializer
+#
+#     lookup_field = manufactory
+#
+#     def get(self, request, *args, **kwargs):
+#         return self.get(request, *args, **kwargs)
+#
+#     def put(self,  request, *args, **kwargs):
+#         return self.put(request, *args, **kwargs)
+#
+#     def delete(self, request, *args, **kwargs):
+#         return self.delete(request, *args, **kwargs)
+
+
+
+
+class AssetRecordViewSet(viewsets.ModelViewSet):
+    queryset = Manufactory.objects.all()
+    serializer_class = TagSerializer
+
+
+class ErrorLogViewSet(viewsets.ModelViewSet):
+    queryset = Manufactory.objects.all()
+    serializer_class = TagSerializer

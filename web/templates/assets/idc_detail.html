@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+
+{% block body %}
+    <div id="wrapper">
+
+    {% include 'navbar.html' %}
+        <div id="page-wrapper" style="min-height: 368px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">IDC详情</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            详情列表
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>服务项</th>
+                                            <th>项目信息</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>IDC名称</td>
+                                            <td>{{ idc.name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IDC联系人</td>
+                                            <td>{{ idc.contacts}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IDC电话</td>
+                                            <td>{{ idc.idc_phone }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>联系人电话</td>
+                                            <td>{{ idc.contacts_phone }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>联系人qq</td>
+                                            <td>{{ idc.contacts_qq }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IDC地址</td>
+                                            <td>{{ idc.idc_addr }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IDC带宽</td>
+                                            <td>{{ idc.bandwidth }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IDC运营商</td>
+                                            <td>{{ idc.operator }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>备注</td>
+                                            <td>{{ idc.memo }}</td>
+                                        </tr>
+                                    </tbody>
+
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

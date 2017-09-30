@@ -1,0 +1,15 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除确认</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>是否确认删除 <b>{{ object.sn }} </b> ?</p>
+    <input type="submit" value="确认" />
+</form>
+</body>
+</html>

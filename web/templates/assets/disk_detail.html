@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+
+{% block body %}
+    <div id="wrapper">
+
+    {% include 'navbar.html' %}
+        <div id="page-wrapper" style="min-height: 368px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">服务器详情</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            详情列表
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>服务项</th>
+                                            <th>项目信息</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>资产</td>
+                                            <td>{{ disk.asset }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>宿主机</td>
+                                            <td>{{ disk.slot}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>主机名</td>
+                                            <td>{{ disk.model }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>厂家</td>
+                                            <td>{{ disk.manufactory }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>型号</td>
+                                            <td>{{ disk.capacity }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>管理IP</td>
+                                            <td>{{ disk.disk_type }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>内核型号</td>
+                                            <td>{{ disk.memo }}</td>
+                                        </tr>
+                                    </tbody>
+
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
